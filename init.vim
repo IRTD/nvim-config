@@ -4,6 +4,9 @@ call plug#begin()
 Plug 'rebelot/kanagawa.nvim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
+Plug 'hachy/eva01.vim'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'maxmx03/fluoromachine.nvim'
 
 " Util
 Plug 'preservim/nerdtree'
@@ -30,7 +33,7 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
 call plug#end()
 
-colorscheme kanagawa
+colorscheme fluoromachine
 
 let mapleader = " "
 " Use tab and s-tab for cycling through items in coc-autocompletion
@@ -46,6 +49,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>t <cmd>terminal<CR>
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying code actions at the cursor position
@@ -55,7 +59,7 @@ nmap <leader>as  <Plug>(coc-codeaction-source)
 " Apply the most preferred quickfix action to fix diagnostic on the current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-nmap <leader>c :bd<CR> 
+nmap <leader>c :bd <CR> 
 
 " Scroll through documentation
 if has('nvim-0.4.0') || has('patch-8.2.0750')
@@ -106,3 +110,12 @@ autocmd ShellCmdPost * NERDTreeRefresh
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set mouse=
+
+packadd termdebug
+let termdebugger="rust-gdb"
