@@ -30,10 +30,13 @@ Plug 'folke/flash.nvim'
 Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+Plug 'qpkorr/vim-bufkill'
 
 call plug#end()
 
 colorscheme fluoromachine
+
+highlight normal guibg=none
 
 let mapleader = " "
 " Use tab and s-tab for cycling through items in coc-autocompletion
