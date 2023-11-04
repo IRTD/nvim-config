@@ -10,6 +10,7 @@ Plug 'maxmx03/fluoromachine.nvim'
 
 " Util
 Plug 'preservim/nerdtree'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/vim-markdown'
 Plug 'tpope/vim-commentary'
@@ -24,19 +25,19 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'bling/vim-bufferline'
 Plug 'folke/which-key.nvim'
 Plug 'folke/flash.nvim'
 Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 Plug 'qpkorr/vim-bufkill'
+Plug 'HiPhish/rainbow-delimiters.nvim'
+Plug 'mrcjkb/haskell-tools.nvim'
 
 call plug#end()
 
-colorscheme fluoromachine
+colorscheme kanagawa
 
-highlight normal guibg=none
+" highlight normal guibg=none
 
 let mapleader = " "
 " Use tab and s-tab for cycling through items in coc-autocompletion
@@ -45,14 +46,11 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-nnoremap <leader>f <cmd>Telescope find_files<CR>
-nnoremap <leader>b <cmd>Telescope buffers<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <leader>t <cmd>terminal<CR>
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying code actions at the cursor position
@@ -61,6 +59,7 @@ nmap <leader>ac  <Plug>(coc-codeaction-cursor)
 nmap <leader>as  <Plug>(coc-codeaction-source)
 " Apply the most preferred quickfix action to fix diagnostic on the current line
 nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>t   <cmd>Telescope find_files<CR>
 
 nmap <leader>c :bd <CR> 
 
@@ -122,3 +121,23 @@ set mouse=
 
 packadd termdebug
 let termdebugger="rust-gdb"
+
+let g:rainbow_delimiters = {
+    \ 'strategy': {
+        \ '': rainbow_delimiters#strategy.global,
+        \ 'vim': rainbow_delimiters#strategy.local,
+    \ },
+    \ 'query': {
+        \ '': 'rainbow-delimiters',
+        \ 'lua': 'rainbow-blocks',
+    \ },
+    \ 'highlight': [
+        \ 'RainbowDelimiterRed',
+        \ 'RainbowDelimiterYellow',
+        \ 'RainbowDelimiterBlue',
+        \ 'RainbowDelimiterOrange',
+        \ 'RainbowDelimiterGreen',
+        \ 'RainbowDelimiterViolet',
+        \ 'RainbowDelimiterCyan',
+    \ ],
+\ }
