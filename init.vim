@@ -9,7 +9,8 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'maxmx03/fluoromachine.nvim'
 
 " Util
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+Plug 'ellisonleao/glow.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/vim-markdown'
@@ -37,7 +38,10 @@ call plug#end()
 
 colorscheme kanagawa
 
+" transparent background when on
 " highlight normal guibg=none
+
+inoremap <A-j> <ESC>
 
 let mapleader = " "
 " Use tab and s-tab for cycling through items in coc-autocompletion
@@ -46,11 +50,11 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" nmap <silent>f :NERDTreeFocus <CR>
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying code actions at the cursor position
@@ -83,14 +87,14 @@ xnoremap <C-k> <Plug>(multicursor-visual-mode-up)
 
 " Prevents other buffers to overpower NERDTree
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    " \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Custom Keybinds
 nmap <C-c> <Plug>CommentaryLine
 nmap <silent> K :call ShowDocumentation()<CR>
 nnoremap , :noh<CR>
-nnoremap <silent> f :NERDTreeFocus<CR>
+" nnoremap <silent> f :NERDTreeFocus<CR>
 nnoremap <silent> q :w<CR>
 cmap q qa
 
@@ -104,9 +108,10 @@ function! ShowDocumentation()
 endfunction
 
 " autocmds that execute when neovim starts
-autocmd VimEnter * NERDTree | wincmd p
-autocmd BufWritePost * NERDTreeRefresh
-autocmd ShellCmdPost * NERDTreeRefresh
+" autocmd VimEnter * NERDTree | wincmd p
+" autocmd BufWritePost * NERDTreeRefresh
+" autocmd ShellCmdPost * NERDTreeRefresh
+" autocmd BufAdd * NERDTreeClose
 
 "ale autocompletion plugin config
 let g:rustfmt_autosave = 1
