@@ -33,6 +33,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'HiPhish/rainbow-delimiters.nvim'
 Plug 'mrcjkb/haskell-tools.nvim'
+Plug 'antonk52/bad-practices.nvim'
 
 call plug#end()
 
@@ -42,6 +43,7 @@ colorscheme kanagawa
 " highlight normal guibg=none
 
 inoremap <A-j> <ESC>
+set so=15
 
 let mapleader = " "
 " Use tab and s-tab for cycling through items in coc-autocompletion
