@@ -1,5 +1,10 @@
 {
 	"languageserver": {
+        "asm-lsp": {
+            "command": "asm-lsp",
+            "filetypes": [ "asm", "s", "S" ]
+        },
+
 		"ccls": {
 			"command": "ccls",
 			"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
@@ -20,13 +25,13 @@
         "haskell": {
             "command": "haskell-language-server-9.2.8",
             "rootPatterns": [".hs"],
-            "filetypes": ["haskell"],
+            "filetypes": ["haskell"]
         },
 
         "python": {
             "command": "pyright",
             "rootPatterns": [".py", "requirements.txt"],
-            "filetypes": ["python"],
-        },
+            "filetypes": ["python"]
+        }
 	}
 }

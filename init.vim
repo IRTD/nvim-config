@@ -7,6 +7,9 @@ Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }
 Plug 'hachy/eva01.vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'maxmx03/fluoromachine.nvim'
+Plug 'itsjunetime/rose-pine-vim'
+Plug 'bluz71/vim-moonfly-colors'
+Plug 'Nequo/vim-allomancer'
 
 " Util
 " Plug 'preservim/nerdtree'
@@ -34,13 +37,14 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'HiPhish/rainbow-delimiters.nvim'
 Plug 'mrcjkb/haskell-tools.nvim'
 Plug 'antonk52/bad-practices.nvim'
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
-colorscheme kanagawa
+colorscheme allomancer
 
 " transparent background when on
-" highlight normal guibg=none
+" hi Normal guibg=None ctermbg=None
 
 inoremap <A-j> <ESC>
 set so=15
