@@ -1,4 +1,4 @@
-call plug#begin()
+﻿call plug#begin()
 
 " ColorThemes
 Plug 'rebelot/kanagawa.nvim'
@@ -48,6 +48,7 @@ colorscheme allomancer
 
 inoremap <A-j> <ESC>
 set so=15
+set number
 
 let mapleader = " "
 " Use tab and s-tab for cycling through items in coc-autocompletion
